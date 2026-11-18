@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luis-leaf
 
-## Getting Started
+Luis-leaf is a multiplayer party-game web application inspired by Fishbowl.
 
-First, run the development server:
+A host creates a room, players join without creating accounts, and everyone
+plays together through three rounds using the same collection of words.
+
+## Planned gameplay
+
+1. **Describe** — Describe the word without saying the word itself.
+2. **Act** — Act out the word without speaking.
+3. **One-word clue** — Give exactly one word as a clue.
+
+The application is planned to support a host interface, mobile player
+interfaces, and a shared display for the room.
+
+> **Project status:** Early development. The project foundation is being
+> established. Gameplay, authentication, database integration, and
+> multiplayer synchronization have not been implemented yet.
+
+## Technology stack
+
+### Current foundation
+
+- Next.js — React framework and App Router
+- React — UI library
+- TypeScript — Static typing
+- Tailwind CSS — Styling
+- Zod — Runtime schema validation
+- ESLint — Code linting
+
+### Planned infrastructure
+
+- Supabase
+- PostgreSQL
+- Supabase Auth
+- Supabase Realtime
+- Vercel
+
+Planned infrastructure is not configured or connected yet.
+
+## Getting started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/luisreyesxv/ai-luisleaf.git
+cd ai-luisleaf
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+### Environment variables
+
+No project-specific environment variables are required at this stage.
+
+The `.env.example` file will be updated as external services are introduced.
+Do not commit `.env.local` or other files containing secrets.
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create an optimized production build |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+Automated tests have not been configured yet.
 
-To learn more about Next.js, take a look at the following resources:
+## Project structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+ai-luisleaf/
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── lib/
+│   └── env.ts
+├── public/
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+└── tsconfig.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Directories and files will be introduced as their corresponding
+functionality is implemented.
 
-## Deploy on Vercel
+## Design direction
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Luis-leaf aims to feel like a physical party game translated into a
+digital experience.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The visual direction emphasizes:
+
+- Paper-like surfaces
+- Ink-inspired outlines
+- Hand-drawn illustrations
+- Organic shapes and layouts
+- Playful visual feedback
+- Subtle decorative animations
+
+Readability and usability take priority over decorative effects.
+
+## Roadmap
+
+1. **Project initialization** — Establish the application foundation.
+2. **Database foundation** — Configure Supabase and PostgreSQL.
+3. **Host authentication** — Implement authenticated host accounts.
+4. **Game creation and joining** — Create rooms and support guest players.
+5. **Lobby and word submission** — Manage participants and collect words.
+6. **Team assignment** — Support team setup and game configuration.
+7. **Game engine** — Implement authoritative turns, rounds, timers, and scoring.
+8. **Realtime synchronization** — Coordinate connected devices.
+9. **Administration and demo environments** — Add operational tools and isolated demos.
+10. **Testing and deployment** — Prepare the application for production.
+
+## Screenshots and live application
+
+Screenshots and a production URL will be added when those are available.
+
+## Repository
+
+[GitHub — luisreyesxv/ai-luisleaf](https://github.com/luisreyesxv/ai-luisleaf)
