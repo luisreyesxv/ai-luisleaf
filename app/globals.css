@@ -85,3 +85,23 @@ button {
   background: var(--secondary);
   color: var(--foreground);
 }
+
+.paper-texture {
+  background-image:
+    repeating-linear-gradient(
+      12deg,
+      transparent 0px,
+      rgb(37 34 30 / 1.2%) 1px,
+      transparent 2px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      102deg,
+      transparent 0px,
+      rgb(37 34 30 / 0.8%) 1px,
+      transparent 2px,
+      transparent 11px
+    );
+
+  background-blend-mode: multiply;
+}

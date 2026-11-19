@@ -10,7 +10,7 @@ type RoundCardProps = {
 export function RoundCard({ round }: RoundCardProps) {
   return (
     <DrawnCard stroke={round.color} className={`${round.rotation}`}>
-      <DrawablyHighlight roughness={1} fill={round.color}>
+      <DrawablyHighlight roughness={1} boil={0.9} fill={round.color}>
         <div className="flex items-start gap-4">
           <span className="pt-1 text-sm font-black opacity-60">
             {round.number}

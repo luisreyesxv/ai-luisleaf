@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { DrawablyUnderline } from "drawably/react";
+import { DrawablyUnderline, DrawablyHighlight } from "drawably/react";
+import { DrawnHighlight } from "../drawably/drawn-highlight";
 
 export function HeroSection() {
   return (
@@ -14,27 +15,21 @@ export function HeroSection() {
         Words are
         <br />
         <span className="relative inline-block text-primary">
-          <DrawablyUnderline
-            stroke="currentColor"
+          <DrawnHighlight
             width={5}
-            boil={1}
-            roughness={0.5}
+            roughness={1}
+            fill="currentColor"
+            className="px-4"
           >
-            overrated.
-          </DrawablyUnderline>
-          {/* <svg
-            aria-hidden="true"
-            viewBox="0 0 340 18"
-            className="absolute -bottom-2 left-0 w-full"
-            fill="none"
-          >
-            <path
-              d="M3 12C78 2 229 2 336 10"
+            <DrawablyUnderline
               stroke="currentColor"
-              strokeWidth="6"
-              strokeLinecap="round"
-            />
-          </svg> */}
+              width={10}
+              boil={1}
+              roughness={0.5}
+            >
+              overrated.
+            </DrawablyUnderline>
+          </DrawnHighlight>
         </span>
       </h1>
 

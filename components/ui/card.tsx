@@ -1,25 +1,22 @@
 import type { HTMLAttributes } from "react";
 
 type CardVariant = "default" | "sticky" | "layered" | "outlined";
-
 type StickyColor = "yellow" | "pink" | "blue" | "green";
-
 type CardRotation = -2 | -1 | 0 | 1 | 2;
+type PaperTexture = "none" | "subtle";
 
 type CardProps = HTMLAttributes<HTMLDivElement> & {
   variant?: CardVariant;
   stickyColor?: StickyColor;
   rotation?: CardRotation;
+  texture?: PaperTexture;
 };
 
 const variants: Record<CardVariant, string> = {
-  default: "border border-border-strong bg-surface shadow-[4px_5px_0_#25221e]",
-
+  default: "bg-surface shadow-[4px_5px_0_#75221e]",
   sticky: "border border-border-strong shadow-[4px_5px_0_#25221e]",
-
   layered:
     "border border-border-strong bg-surface shadow-[3px_3px_0_#d8cfbf,6px_6px_0_#25221e]",
-
   outlined: "border-2 border-dashed border-border bg-transparent",
 };
 
@@ -43,14 +40,18 @@ export function Card({
   variant = "default",
   stickyColor = "yellow",
   rotation = 0,
+  texture = "subtle",
   className = "",
   ...props
 }: CardProps) {
   const colorClass = variant === "sticky" ? stickyColors[stickyColor] : "";
 
+  const textureClass =
+    variant !== "outlined" && texture === "subtle" ? "paper-texture" : "";
+
   return (
     <div
-      className={`rounded-2xl p-5 ${variants[variant]} ${colorClass} ${rotations[rotation]} ${className}`}
+      className={`relative p-5 ${variants[variant]} ${colorClass} ${rotations[rotation]} ${textureClass} ${className}`}
       {...props}
     >
       {children}

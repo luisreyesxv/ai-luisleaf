@@ -1,6 +1,9 @@
 import { RoundCard } from "./round-card";
 import { rounds } from "./rounds";
 import { Card } from "@/components/ui/card";
+import { FoldedCorner } from "../ui/folder-corner";
+import { PaperPin } from "../ui/paper-pin";
+import { PaperTape } from "../ui/paper-tape";
 
 export function GamePreview() {
   return (
@@ -20,10 +23,14 @@ export function GamePreview() {
       </div>
 
       <Card
-        variant="layered"
-        className="relative rotate-2 rounded-[2rem] border-[3px] p-5 shadow-[9px_10px_0_#25221e] sm:p-7"
+        texture="subtle"
+        // variant="default"
+        className="relative rotate-2  p-5 sm:p-7"
       >
         <div className="flex items-center justify-between border-b-2 border-dashed border-border pb-5">
+          <FoldedCorner color="cream" size="lg" />
+          <PaperTape position="top-left" color="blue" />
+
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted">
               The game is simple
