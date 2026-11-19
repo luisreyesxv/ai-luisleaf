@@ -19,7 +19,10 @@ export function GamePreview() {
         ✦
       </div>
 
-      <Card className="relative rotate-2 rounded-[2rem] border-[3px] p-5 shadow-[9px_10px_0_#25221e] sm:p-7">
+      <Card
+        variant="layered"
+        className="relative rotate-2 rounded-[2rem] border-[3px] p-5 shadow-[9px_10px_0_#25221e] sm:p-7"
+      >
         <div className="flex items-center justify-between border-b-2 border-dashed border-border pb-5">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-muted">
