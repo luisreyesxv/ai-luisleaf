@@ -16,17 +16,12 @@ export function HeroSection() {
         <br />
         <span className="relative inline-block text-primary">
           <DrawnHighlight
-            width={5}
-            roughness={1}
+            width={0.2}
+            roughness={0.1}
             fill="currentColor"
             className="px-4"
           >
-            <DrawablyUnderline
-              stroke="currentColor"
-              width={10}
-              boil={1}
-              roughness={0.5}
-            >
+            <DrawablyUnderline stroke="currentColor" width={8} roughness={0.8}>
               overrated.
             </DrawablyUnderline>
           </DrawnHighlight>

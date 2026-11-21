@@ -1,3 +1,4 @@
+"use client";
 import type { ButtonHTMLAttributes } from "react";
 import { DrawablyButton as DrawablyButtonPrimitive } from "drawably/react";
 
@@ -7,6 +8,9 @@ type DrawnButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "outline" | "solid" | "scribble";
   state?: "idle" | "loading" | "error" | "success";
   tone?: "neutral" | "danger";
+  paper?: string;
+  stroke?: string;
+  fill?: string;
 };
 
 export function DrawnButton({

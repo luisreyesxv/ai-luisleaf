@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Luis-leaf",
-    template: "%s | Luis-leaf",
+    default: "LuisLeaf",
+    template: "%s | LuisLeaf",
   },
   description:
     "A multiplayer party game where friends compete, guess, and have fun.",

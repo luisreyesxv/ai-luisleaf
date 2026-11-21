@@ -26,7 +26,9 @@ export function Button({
   return (
     <button
       type={type}
-      className={`inline-flex items-center justify-center gap-3 rounded-xl border-2 border-border-strong font-extrabold shadow-[4px_5px_0_#25221e] transition-colors disabled:cursor-not-allowed disabled:opacity-90 ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-3 rounded-xl border-2 border-border-strong font-extrabold shadow-[4px_5px_0_#25221e] transition-colors disabled:cursor-not-allowed disabled:opacity-50 focus-visible:outline-2
+focus-visible:outline-offset-4
+focus-visible:outline-primary ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}

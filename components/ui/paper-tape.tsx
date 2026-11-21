@@ -37,8 +37,8 @@ export function PaperTape({
 }: PaperTapeProps) {
   return (
     <div
-      aria-hidden="true"
       {...props}
+      aria-hidden="true"
       className={`pointer-events-none absolute z-10 h-6 w-20 opacity-90 shadow-sm ${positions[position]} ${colors[color]} ${rotations[rotation]} ${className}`}
       style={{
         clipPath: "polygon(2% 0%, 98% 2%, 100% 96%, 1% 100%)",

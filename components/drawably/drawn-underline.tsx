@@ -1,3 +1,4 @@
+"use client";
 import type { ComponentProps } from "react";
 import { DrawablyUnderline as DrawablyUnderlinePrimitive } from "drawably/react";
 
