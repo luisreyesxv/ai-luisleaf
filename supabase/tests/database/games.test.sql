@@ -72,8 +72,11 @@ select extensions.throws_ok(
 
 -- Complete the first game so the host can create another active game.
 update public.games
-set status = 'completed',
-    phase = 'completed'
+set
+  status = 'completed',
+  phase = 'completed',
+  completed_at = now(),
+  closed_at = now()
 where join_code = 'ZX90QW';
 
 -- Codes differing only by letter case must be duplicates.
