@@ -6,12 +6,13 @@ import { DRAWABLY_DEFAULTS } from "@/components/ui/drawably/config";
 type DrawnCardProps = HTMLAttributes<HTMLDivElement> & {
   boil?: number;
   stroke?: string;
+  width?: number;
 };
 
 export function DrawnCard({
   children,
   className = "",
-  stroke = "blue",
+  stroke = "currentColor",
   boil = DRAWABLY_DEFAULTS.boil,
   ...props
 }: DrawnCardProps) {

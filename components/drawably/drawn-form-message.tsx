@@ -1,9 +1,12 @@
 import type { HTMLAttributes } from "react";
-import { DrawablyBadge } from "drawably/react";
+import { DrawablyAlert } from "drawably/react";
 import { DRAWABLY_DEFAULTS } from "@/components/ui/drawably/config";
+import { DrawnHighlight } from "./drawn-highlight";
 
 type DrawnFormMessageProps = HTMLAttributes<HTMLParagraphElement> & {
   tone?: "error" | "success" | "description";
+  stroke?: string;
+  fill?: string;
 };
 
 const tones = {
@@ -15,11 +18,13 @@ const tones = {
 export function DrawnFormMessage({
   tone = "description",
   className = "",
+  stroke = "currentColor",
+  fill = "currentColor",
   children,
   ...props
 }: DrawnFormMessageProps) {
   return (
-    <p
+    <div
       className={`text-sm leading-5 ${tones[tone]} ${className}`}
       role={tone === "error" ? "alert" : undefined}
       {...props}
@@ -27,10 +32,19 @@ export function DrawnFormMessage({
       {tone === "description" ? (
         children
       ) : (
-        <DrawablyBadge {...DRAWABLY_DEFAULTS} variant="outline">
-          <span className={tones[tone]}>{children}</span>
-        </DrawablyBadge>
+        <DrawablyAlert
+          width={2}
+          className="p-5 "
+          stroke={stroke}
+          {...DRAWABLY_DEFAULTS}
+        >
+          <DrawnHighlight fill="currentColor">
+            <span className={`font-black uppercase ${tones[tone]}`}>
+              {children}
+            </span>
+          </DrawnHighlight>
+        </DrawablyAlert>
       )}
-    </p>
+    </div>
   );
 }

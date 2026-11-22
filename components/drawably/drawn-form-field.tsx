@@ -1,3 +1,5 @@
+"use client";
+
 import type { HTMLAttributes, ReactNode } from "react";
 import { DrawnLabel } from "@/components/drawably/drawn-label";
 import { DrawnFormMessage } from "@/components/drawably/drawn-form-message";

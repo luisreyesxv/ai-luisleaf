@@ -1,4 +1,5 @@
 "use client";
+
 import type { ButtonHTMLAttributes } from "react";
 import { DrawablyButton as DrawablyButtonPrimitive } from "drawably/react";
 
@@ -20,6 +21,9 @@ export function DrawnButton({
   tone = "neutral",
   type = "button",
   className = "",
+  paper,
+  stroke,
+  fill,
   ...props
 }: DrawnButtonProps) {
   return (
@@ -29,7 +33,10 @@ export function DrawnButton({
       variant={variant}
       state={state}
       tone={tone}
-      className={`inline-flex min-h-12 items-center justify-center gap-3 px-6 text-sm font-bold ${className}`}
+      paper={paper}
+      stroke={stroke}
+      fill={fill}
+      className={`inline-flex min-h-12 items-center justify-center gap-3 px-6 ${className}`}
       {...props}
     >
       {children}

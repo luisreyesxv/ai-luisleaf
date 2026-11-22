@@ -1,9 +1,11 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
-import { createGameSchema } from "@/lib/validations/game";
+import { redirect } from "next/navigation";
+
 import { getGameCreationErrorMessage } from "@/lib/games/errors";
 import type { CreateGameActionState } from "@/lib/games/types";
+import { createClient } from "@/lib/supabase/server";
+import { createGameSchema } from "@/lib/validations/game";
 
 export async function createGameAction(
   _previousState: CreateGameActionState,
@@ -60,10 +62,5 @@ export async function createGameAction(
     };
   }
 
-  return {
-    status: "success",
-    gameId: game.game_id,
-    joinCode: game.join_code,
-    reused: game.reused,
-  };
+  redirect(`/games/${game.game_id}/lobby`);
 }

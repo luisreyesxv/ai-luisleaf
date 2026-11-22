@@ -1,4 +1,4 @@
-import { Card } from "@/components/ui/card";
+import { CreateGameForm } from "@/components/games/create-game-form";
 import {
   BodyText,
   Eyebrow,
@@ -13,18 +13,23 @@ export default function DashboardPage() {
         <Eyebrow>HOST DASHBOARD</Eyebrow>
         <PageTitle>Welcome back.</PageTitle>
         <BodyText className="max-w-2xl text-muted">
-          Your hosting space is ready. When you're ready, you can create a room
-          and invite your friends to play.
+          Ready to bring everyone together? Set up a game and get your friends
+          in the room.
         </BodyText>
       </section>
 
-      <Card variant="sticky" className="max-w-xl space-y-3">
-        <Eyebrow>COMING NEXT</Eyebrow>
-        <SectionTitle>Your first game</SectionTitle>
-        <BodyText>
-          Room creation and guest joining are the next features we'll build.
-        </BodyText>
-      </Card>
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <Eyebrow>NEW GAME</Eyebrow>
+          <SectionTitle>Set up your game</SectionTitle>
+          <BodyText>
+            Choose your game mode and customize the settings before inviting
+            everyone to play.
+          </BodyText>
+        </div>
+
+        <CreateGameForm />
+      </section>
     </main>
   );
 }

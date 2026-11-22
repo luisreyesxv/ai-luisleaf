@@ -51,7 +51,7 @@ export function Card({
 
   return (
     <div
-      className={`relative p-5 ${variants[variant]} ${colorClass} ${rotations[rotation]} ${textureClass} ${className}`}
+      className={`relative p-5  ${variants[variant]} ${colorClass} ${rotations[rotation]} ${textureClass} ${className}`}
       {...props}
     >
       {children}
