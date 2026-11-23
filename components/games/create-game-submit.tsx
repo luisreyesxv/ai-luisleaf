@@ -21,7 +21,7 @@ export function CreateGameSubmit({ hasError = false }: CreateGameSubmitProps) {
       stroke={"black"}
       state={pending ? "loading" : "idle"}
       disabled={pending}
-      className="w-full sm:w-auto !font-black"
+      className="w-full sm:w-auto font-black!"
     >
       {pending ? "Creating your game..." : "Create game"}
     </DrawnButton>

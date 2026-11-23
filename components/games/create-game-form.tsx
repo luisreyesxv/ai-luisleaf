@@ -31,7 +31,7 @@ export function CreateGameForm() {
 
       <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-2">
         {/* Game mode card */}
-        <Card variant="sticky" className="h-full">
+        <Card variant="sticky" rotation={-1} className="h-full">
           <DrawnFormSection
             title="Choose your game"
             description="Pick the format everyone will play."
@@ -79,7 +79,7 @@ export function CreateGameForm() {
         </Card>
 
         {/* Game settings card */}
-        <Card variant="sticky" className="h-full">
+        <Card variant="sticky" rotation={2} className="h-full ">
           <DrawnFormSection
             title="Game settings"
             description="Fine-tune how each round plays."
