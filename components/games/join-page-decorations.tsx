@@ -88,7 +88,7 @@ const decorations = [
     textColor: "black",
     mobilePosition: "left-8 top-2",
     desktopPosition: "md:left-[21%] md:top-[8%]",
-    rotation: "rotate-6",
+    rotation: "rotate-10",
     extra: "text-[10px] sm:text-xs md:text-lg",
   },
 ];
