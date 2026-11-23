@@ -1,6 +1,12 @@
+
 create extension if not exists pgtap with schema extensions;
 
 begin;
+
+-- Isolate this test from the actual local feature-flag setting.
+update public.admin_settings
+set room_creation_enabled = false
+where singleton_id = 1;
 
 select extensions.plan(8);
 
@@ -14,7 +20,7 @@ select extensions.is(
   'Exactly one admin settings row exists'
 );
 
--- All optional features must default to disabled.
+-- Room creation can be disabled.
 select extensions.is(
   (
     select room_creation_enabled
@@ -22,9 +28,10 @@ select extensions.is(
     where singleton_id = 1
   ),
   false,
-  'Room creation is disabled by default'
+  'Room creation can be disabled'
 );
 
+-- Other optional features must remain disabled.
 select extensions.is(
   (
     select heckle_enabled
@@ -58,29 +65,17 @@ select extensions.throws_ok(
 
 -- Browser roles must not have direct table access.
 select extensions.ok(
-  not has_table_privilege(
-    'anon',
-    'public.admin_settings',
-    'SELECT'
-  ),
+  not has_table_privilege('anon', 'public.admin_settings', 'SELECT'),
   'Anonymous users cannot read admin settings'
 );
 
 select extensions.ok(
-  not has_table_privilege(
-    'authenticated',
-    'public.admin_settings',
-    'SELECT'
-  ),
+  not has_table_privilege('authenticated', 'public.admin_settings', 'SELECT'),
   'Authenticated users cannot directly read admin settings'
 );
 
 select extensions.ok(
-  has_table_privilege(
-    'service_role',
-    'public.admin_settings',
-    'SELECT'
-  ),
+  has_table_privilege('service_role', 'public.admin_settings', 'SELECT'),
   'The trusted server role can read admin settings'
 );
 

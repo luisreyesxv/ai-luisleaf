@@ -3,6 +3,12 @@ create extension if not exists pgtap with schema extensions;
 
 begin;
 
+-- Start with room creation disabled for the feature-flag test.
+-- This change is rolled back when the test finishes.
+update public.admin_settings
+set room_creation_enabled = false
+where singleton_id = 1;
+
 select extensions.plan(13);
 
 

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { DrawnHighlight } from "../drawably/drawn-highlight";
+import Image from "next/image";
 
 export default function LogoButton() {
   return (
@@ -7,8 +9,16 @@ export default function LogoButton() {
       aria-label="LuisLeaf home"
       className="flex items-center gap-2 group"
     >
-      <span className="flex h-10 w-10 rotate-[-8deg] items-center justify-center rounded-xl border-2 border-border-strong bg-secondary text-2xl shadow-[2px_3px_0_#25221e]">
-        ✳
+      <span className="flex h-10 w-10 rotate-[-8deg] items-center justify-center border-2 border-border-strong bg-secondary text-2xl shadow-[2px_3px_0_#25221e]">
+        <DrawnHighlight fill="var(--primary)">
+          <Image
+            src="/decorations/logo.svg"
+            alt="logo"
+            width={512}
+            height={512}
+            className="h-full w-full object-contain"
+          />
+        </DrawnHighlight>
       </span>
 
       <span className="text-2xl font-black tracking-tight group-active:text-primary transition-colors duration-300">

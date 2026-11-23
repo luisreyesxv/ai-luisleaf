@@ -12,6 +12,7 @@ type DrawnFormFieldProps = HTMLAttributes<HTMLDivElement> & {
   description?: string;
   error?: string;
   children: ReactNode;
+  stroke?: string;
 };
 
 export function DrawnFormField({

@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentProps } from "react";
 import { DrawablyHighlight as DrawablyHighlightPrimitive } from "drawably/react";
 

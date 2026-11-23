@@ -39,7 +39,7 @@ export function DrawnButton({
       className={`inline-flex min-h-12 items-center justify-center gap-3 px-6 ${className}`}
       {...props}
     >
-      {children}
+      <span>{children}</span>
     </DrawablyButtonPrimitive>
   );
 }

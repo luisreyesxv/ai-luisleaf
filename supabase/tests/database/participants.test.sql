@@ -107,7 +107,7 @@ select extensions.throws_ok(
   'Empty display names are rejected'
 );
 
--- Names cannot exceed 24 characters.
+-- Names cannot exceed 16 characters.
 select extensions.throws_ok(
   $$
     insert into public.participants (
@@ -117,13 +117,13 @@ select extensions.throws_ok(
     )
     values (
       '11111111-1111-4111-8111-111111111111',
-      'This Display Name Is Too Long',
+      '12345678901234567',
       repeat('c', 64)
     );
   $$,
   '23514',
   null,
-  'Display names longer than 24 characters are rejected'
+  'Display names longer than 16 characters are rejected'
 );
 
 -- Names must already be normalized by the application.
@@ -189,8 +189,10 @@ select extensions.throws_ok(
 
 -- Authenticated clients cannot insert participants.
 set local role authenticated;
+
 set local request.jwt.claim.sub =
   'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
+
 set local request.jwt.claims =
   '{"sub":"aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa","role":"authenticated"}';
 
