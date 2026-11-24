@@ -5,16 +5,20 @@ import { DrawnCard } from "./drawn-card";
 
 type DrawnAlertProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
+  stroke?: string;
+  fill?: string;
 };
 
 export function DrawnAlert({
   children,
   className = "",
+  stroke = "var(--danger)",
+  fill = "var(--danger)",
   ...props
 }: DrawnAlertProps) {
   return (
     <DrawnCard
-      stroke="var(--danger)"
+      stroke={stroke}
       className={[
         "flex w-full items-center gap-3 bg-[#FFF1F2]",
         "p-3 text-sm font-semibold text-danger",
@@ -22,7 +26,7 @@ export function DrawnAlert({
       ].join(" ")}
       {...props}
     >
-      <DrawnHighlight fill="#FDA4AF">
+      <DrawnHighlight fill={fill}>
         <span className="flex size-7 shrink-0 items-center justify-center text-lg font-black text-black">
           !
         </span>

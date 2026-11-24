@@ -69,9 +69,9 @@ export async function joinGameAction(
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    path: `/games/${participant.game_id}`,
+    path: `/play/${participant.game_id}`,
     maxAge: GUEST_SESSION_MAX_AGE,
   });
 
-  redirect(`/games/${participant.game_id}/lobby`);
+  redirect(`/play/${participant.game_id}/lobby`);
 }
