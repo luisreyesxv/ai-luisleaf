@@ -1,5 +1,6 @@
 import { DrawnCard } from "@/components/drawably/drawn-card";
 import { DrawnHighlight } from "@/components/drawably/drawn-highlight";
+import { DrawnUnderline } from "@/components/drawably/drawn-underline";
 import { DrawnAlert } from "@/components/drawably/drawn-alert";
 
 type PlayerLobbyWelcomeProps = {
@@ -30,8 +31,10 @@ export function PlayerLobbyWelcome({
           <h1 className="text-3xl font-black tracking-tight text-[#252525] sm:text-4xl">
             Welcome,
             <br />
-            <DrawnHighlight fill="#FF80AB">
-              <span className="break-words">{displayName}</span>
+            <DrawnHighlight fill="var(--primary)">
+              <span className="break-words">
+                <DrawnUnderline>{displayName}</DrawnUnderline>
+              </span>
             </DrawnHighlight>
           </h1>
         </div>

@@ -1,4 +1,5 @@
 import "server-only";
+
 import { redirect, notFound } from "next/navigation";
 
 import { createClient } from "@/lib/supabase/server";
@@ -7,12 +8,10 @@ export async function getHostGame(gameId: string) {
   const supabase = await createClient();
 
   // Verify the authenticated user's identity.
-  const {
-    data: { claims },
-    error: authError,
-  } = await supabase.auth.getClaims();
+  const { data: claimsData, error: authError } =
+    await supabase.auth.getClaims();
 
-  const userId = claims?.sub;
+  const userId = claimsData?.claims?.sub;
 
   if (authError || typeof userId !== "string") {
     redirect("/sign-in");
